@@ -1,9 +1,7 @@
 # 📝 Rec-Metric-logger
 **Metric logger for recommendation systems**
-  
-</br>
-
-## **Examples**
+<br/><br>
+## **✅ Examples**
 ```python
 from scipy import sparse
 
@@ -44,16 +42,14 @@ validation nDCG                   : 0.4623
 validation nDCG (truncated)       : 0.5617
 Short Head ratio                  : 0.5556
 ```
-  
-</br>
-
-## `metric.py`
-- [v] nDCG
-- [v] short head ratio
+<br/><br>
+## ✅ `metric.py`
+- [x] nDCG
+- [x] short head ratio
 - [ ] precision
 - [ ] recall
 - [ ] confusion matrix
-
+<br/><br>
 #### **`nDCG @ k`**
 ```python
 from metric import nDCG
@@ -90,7 +86,6 @@ decay = [1.0000, 0.6309, 0.5000, 0.4307, 0.3869, ....] where decay[i] = 1/log2(i
 
     return ndcg = 6.5 / 13.6545
 ```
-
 #### **`Short Head @ k`**
 ```python
 from metric import short_head
