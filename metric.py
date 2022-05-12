@@ -23,7 +23,7 @@ def nDCG(ground_truth,
     ufeats : torch.FloatTensor()
         (n_users, hidden_dim)
     ifeats : torch.FloatTensor()
-        (hidden_dim, n_items)
+        (n_items, hidden_dim)
     train : scipy.sparse.csr_matrix
         (n_users, n_items)
         Optional
@@ -130,7 +130,7 @@ def short_head(train,
     ufeats : torch.FloatTensor()
         (n_users, hidden_dim)
     ifeats : torch.FloatTensor()
-        (hidden_dim, n_items)
+        (n_items, hidden_dim)
 
     Examples
     --------
@@ -167,7 +167,7 @@ def short_head(train,
             train_batch = train[start:start + batch_size]
             scores[train_batch.nonzero()] = float('-inf')
 
-        short_head_ratio.append(short_head_per_user(scores, most_popular_items, k))
+        short_head_ratio.append(short_head_per_user(scores, non_most_popular, k))
 
     return torch.cat(short_head_ratio).mean().item()
 
