@@ -73,7 +73,7 @@ def nDCG(ground_truth,
         train_batch = train[start:start + batch_size]
         scores[train_batch.nonzero()] = float('-inf')
 
-        ndcgs.append(nDCG_per_user(scores, gt_batch, k = k))
+        ndcgs.append(nDCG_per_user(gt_batch, scores, k = k))
 
     ndcg = torch.cat(ndcgs).mean().item()
 
